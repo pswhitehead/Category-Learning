@@ -1,0 +1,436 @@
+
+
+body {
+/*    font-size: 16px;
+    color: black;
+    font-family: Helvetica, arial;*/
+    padding: 0;
+    margin: 0;
+		background-color: white;
+}
+
+.canvas-container{
+  position: relative;
+  width: 900;
+  height: 900;
+}
+canvas {
+  background-color:#43464B
+}
+
+#info-consent-letter{
+  background-color:white;
+}
+#submitButton {
+  position:absolute;
+  left:45%;
+  top:40%;
+  background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#submitButton:hover {
+	background-color:#006400;
+}
+#submitButton:active {
+	position:absolute;
+	top:40.2%;
+}
+
+#consentbutton {
+  position:absolute;
+  left:45%;
+  top:75%;
+  background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#consentbutton:hover {
+  background-color:#006400;
+}
+#consentbutton:active {
+	position:absolute;
+	top:75.2%;
+}
+
+#Granite {
+  position:absolute;
+  left:30%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Granite:hover {
+	background-color:#012169;
+}
+#Granite:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Obsidian {
+  position:absolute;
+  left:40%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Obsidian:hover {
+	background-color:#012169;
+}
+#Obsidian:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Pegmatite {
+  position:absolute;
+  left:50%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Pegmatite:hover {
+	background-color:#012169;
+}
+#Pegmatite:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Pumice {
+  position:absolute;
+  left:60%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Pumice:hover {
+	background-color:#012169;
+}
+#Pumice:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Amphibolite {
+  position:absolute;
+  left:30%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Amphibolite:hover {
+	background-color:#012169;
+}
+#Amphibolite:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Gneiss {
+  position:absolute;
+  left:40%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Gneiss:hover {
+	background-color:#012169;
+}
+#Gneiss:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Marble {
+  position:absolute;
+  left:50%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Marble:hover {
+	background-color:#012169;
+}
+#Marble:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Slate {
+  position:absolute;
+  left:60%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Slate:hover {
+	background-color:#012169;
+}
+#Slate:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Breccia {
+  position:absolute;
+  left:30%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Breccia:hover {
+	background-color:#012169;
+}
+#Breccia:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#Conglomerate {
+  position:absolute;
+  left:40%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Conglomerate:hover {
+	background-color:#012169;
+}
+#Conglomerate:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#RockGypsum {
+  position:absolute;
+  left:50%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#RockGypsum:hover {
+	background-color:#012169;
+}
+#RockGypsum:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#Sandstone {
+  position:absolute;
+  left:60%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Sandstone:hover {
+	background-color:#012169;
+}
+#Sandstone:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#Start {
+  position: absolute;
+  left: 46%;
+  top: 59%;
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Start:hover {
+	background-color:#006400;
+}
+#Start:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Example {
+  position: absolute;
+  left: 46%;
+  top: 59%;
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:160px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Example:hover {
+	background-color:#006400;
+}
+#Example:active {
+	position:absolute;
+	top:59.25%;
+}
+
+
+
+
+
+table{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	text-align:center;
+	vertical-align:middle;
+}

@@ -1,0 +1,598 @@
+html{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+body {
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  border:0;
+		background-color: #43464B;
+}
+
+.canvas-container{
+  position: relative;
+  width: 900;
+  height: 900;
+}
+canvas {
+  background-color:#43464B
+}
+
+#info-consent-letter{
+  background-color:white;
+}
+
+#myButton {
+  position:absolute;
+  left:45%;
+  top:55%;
+  background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#myButton:hover {
+	background-color:#006400;
+}
+#myButton:active {
+	position:absolute;
+	top:55.2%;
+}
+
+#Granite {
+  position:absolute;
+  left:30%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Granite:hover {
+	background-color:#012169;
+}
+#Granite:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Obsidian {
+  position:absolute;
+  left:40%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Obsidian:hover {
+	background-color:#012169;
+}
+#Obsidian:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Pegmatite {
+  position:absolute;
+  left:50%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Pegmatite:hover {
+	background-color:#012169;
+}
+#Pegmatite:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Pumice {
+  position:absolute;
+  left:60%;
+  top:68%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+  width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Pumice:hover {
+	background-color:#012169;
+}
+#Pumice:active {
+	position:absolute;
+	top:68.2%;
+}
+
+#Amphibolite {
+  position:absolute;
+  left:30%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Amphibolite:hover {
+	background-color:#012169;
+}
+#Amphibolite:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Gneiss {
+  position:absolute;
+  left:40%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Gneiss:hover {
+	background-color:#012169;
+}
+#Gneiss:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Marble {
+  position:absolute;
+  left:50%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Marble:hover {
+	background-color:#012169;
+}
+#Marble:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Slate {
+  position:absolute;
+  left:60%;
+  top:73%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Slate:hover {
+	background-color:#012169;
+}
+#Slate:active {
+	position:absolute;
+	top:73.2%;
+}
+
+#Breccia {
+  position:absolute;
+  left:30%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Breccia:hover {
+	background-color:#012169;
+}
+#Breccia:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#Conglomerate {
+  position:absolute;
+  left:40%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Conglomerate:hover {
+	background-color:#012169;
+}
+#Conglomerate:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#RockGypsum {
+  position:absolute;
+  left:50%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#RockGypsum:hover {
+	background-color:#012169;
+}
+#RockGypsum:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#Sandstone {
+  position:absolute;
+  left:60%;
+  top:78%;
+	background-color:#00539B;
+	border-radius:28px;
+	border:1px solid #012169;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Sandstone:hover {
+	background-color:#012169;
+}
+#Sandstone:active {
+	position:absolute;
+	top:78.2%;
+}
+
+#Start {
+  position: absolute;
+  left: 46%;
+  top: 59%;
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:119px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Start:hover {
+	background-color:#006400;
+}
+#Start:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Example {
+  position: absolute;
+  left: 46%;
+  top: 59%;
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:160px;
+  height:30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Example:hover {
+	background-color:#006400;
+}
+#Example:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert1 {
+  position: absolute;
+  left: 20%;
+  top: 59%;
+	-webkit-transform: translate(-20%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert1:hover {
+	background-color:#006400;
+}
+#Likert1:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert2 {
+  position: absolute;
+  left: 30%;
+  top: 59%;
+	-webkit-transform: translate(-30%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert2:hover {
+	background-color:#006400;
+}
+#Likert2:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert3 {
+  position: absolute;
+  left: 40%;
+  top: 59%;
+	-webkit-transform: translate(-40%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert3:hover {
+	background-color:#006400;
+}
+#Likert3:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert4 {
+  position: absolute;
+  left: 50%;
+  top: 59%;
+	-webkit-transform: translate(-50%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert4:hover {
+	background-color:#006400;
+}
+#Likert4:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert5 {
+  position: absolute;
+  left: 60%;
+  top: 59%;
+	-webkit-transform: translate(-60%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert5:hover {
+	background-color:#006400;
+}
+#Likert5:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert6 {
+  position: absolute;
+  left: 70%;
+  top: 59%;
+	-webkit-transform: translate(-70%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert6:hover {
+	background-color:#006400;
+}
+#Likert6:active {
+	position:absolute;
+	top:59.25%;
+}
+
+#Likert7 {
+  position: absolute;
+  left: 80%;
+  top: 59%;
+	-webkit-transform: translate(-80%, 0);
+	background-color:#008000;
+	border-radius:28px;
+	border:1px solid #006400;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	width:140px;
+  height:40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#Likert7:hover {
+	background-color:#006400;
+}
+#Likert7:active {
+	position:absolute;
+	top:59.25%;
+}
+
+
+
+table{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	text-align:center;
+	vertical-align:middle;
+}

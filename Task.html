@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Stylesheets-------------------------------------------------------------->
+  <link rel="stylesheet" href="css/Task.css" type="text/css">
+</head>
+
+<body>
+  <!--JS Libraries------------------------------------------------------------->
+  <script type="text/javascript" src="jslib/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="jslib/math.js"></script>
+  <script type="text/javascript" src="jslib/images.js"></script>
+
+  <!--JS Functions------------------------------------------------------------->
+  <script type="text/javascript" src="jsfunc/Common.js"></script>
+  <script type="text/javascript" src="jsfunc/RunTrial.js"></script>
+  <script type="text/javascript" src="jsfunc/Presentation.js"></script>
+  <script type="text/javascript" src="jsfunc/TrialMatrix.js"></script>
+
+  <!--Inline JS Run------------------------------------------------------------>
+  <script type="text/javascript">
+
+
+  $(document).ready(function(){
+    $("#form").hide();
+    c = document.getElementById("myCanvas");
+    ctx = c.getContext("2d");
+    myCanvas = document.getElementById("myCanvas");
+    //document.getElementById("myCanvas").style.cursor = "none";
+
+    //#######################################################//
+    //-------------GLOBAL EXPERIMENT PARAMETERS--------------//
+    //#######################################################//
+
+    //------------------------TIMINGS-----------------------//
+    IMAGEinterval = 6000
+    ITIinterval = 4000
+    ISIinterval = 500
+
+    //---------------------TRIAL COUNTS--------------------//
+    totallength = 237;
+
+    //#######################################################//
+    //-------------Starting HTML and JS Funct----------------//
+    //#######################################################//
+
+    //Start stuff
+    $("#info").hide();
+    $("#form").hide();
+    $('#button').hide();
+    $("#mturk_form").hide();
+    d1 = new Date();
+    runStart = d1.getTime();
+
+    //hide buttons
+    $("#Granite").hide();
+    $("#Obsidian").hide();
+    $("#Pegmatite").hide();
+    $("#Pumice").hide();
+    $("#Amphibolite").hide();
+    $("#Gneiss").hide();
+    $("#Marble").hide();
+    $("#Slate").hide();
+    $("#Breccia").hide();
+    $("#Conglomerate").hide();
+    $("#RockGypsum").hide();
+    $("#Sandstone").hide();
+    $("#Start").hide();
+    $("#Example").hide();
+    $("#Likert1").hide();
+    $("#Likert2").hide();
+    $("#Likert3").hide();
+    $("#Likert4").hide();
+    $("#Likert5").hide();
+    $("#Likert6").hide();
+    $("#Likert7").hide();
+    $("#Likert8").hide();
+
+
+    //first js function to run
+    fileName = listimagenames
+    img = new Array(fileName.length);
+    imgCount = 0
+    loadImage();
+
+    //#######################################################//
+    //------------------INITIALIZING VARIABLES---------------//
+    //#######################################################//
+    i=0;
+    acccount = 0;
+    acctotalcount = 0;
+    notfullscreen = 0;
+    instructionson = 0;
+    block = -1;
+    trialcount = 0;
+    totalcount = 0;
+    instructioncount = 0;
+    stimscreencount = 0;
+
+    //variables that just need to be
+    type = 0;
+    jokes = 0;
+
+    //logfile
+    data=[['']];
+    runStart;
+    logCounter = 0;
+    //onset;
+    d1;
+    checkResponse = false;
+    timeoutHandle = null;
+
+    //#######################################################//
+    //-----------------------Button Presses------------------//
+    //#######################################################//
+    //Detect events likes clicks or button presses
+    $("body").keypress(function(event){
+      //clearTimeout();
+      key = event.keyCode || event.which
+      event.preventDefault();
+    });
+
+
+          });
+
+        </script>
+      </body>
+        <table>
+          <tr>
+            <td>
+              <div class="canvas-container">
+                <canvas id='myCanvas' width='900' height='900'></canvas>
+                <button id='Granite'>Granite</button>
+                <button id='Obsidian'>Obsidian</button>
+                <button id='Pegmatite'>Pegmatite</button>
+                <button id='Pumice'>Pumice</button>
+                <button id='Amphibolite'>Amphibolite</button>
+                <button id='Gneiss'>Gneiss</button>
+                <button id='Marble'>Marble</button>
+                <button id='Slate'>Slate</button>
+                <button id='Breccia'>Breccia</button>
+                <button id='Conglomerate'>Conglomerate</button>
+                <button id='RockGypsum'>Rock Gypsum</button>
+                <button id='Sandstone'>Sandstone</button>
+                <button id='Start'>Begin Task</button>
+                <button id='Example'>See Example Rocks</button>
+                <button id='Likert1'>Always Memorized</button>
+                <button id='Likert2'>Usually Memorized</button>
+                <button id='Likert3'>Sometimes Memorized</button>
+                <button id='Likert4'>Unsure or Equally Both Strategies</button>
+                <button id='Likert5'>Sometimes Established Rule</button>
+                <button id='Likert6'>Usually Established Rule</button>
+                <button id='Likert7'>Always Established Rule</button>
+                  </div>
+              <div style="text-align:center; align:center;">
+              </div>
+              <div style="text-align:center;">
+                <button id="startButton">Start</button>
+              </div>
+              <form id="form" onsubmit="return false;">
+                <input   style=position:absolute;top:80%;left:40%;width:10%; type="text" id="userInput">
+              </form>
+              <form id="mturk_form" method="POST" action="https://dibs-web01.vm.duke.edu/AMTSubmit/dataHandler.php">
+                <input type="hidden" id="assignmentId" name="assignmentId" value="">
+                <input type="hidden" id="workerId" name="workerId" value="">
+                <input type="hidden" id="hitId" name="hitId" value="">
+                <input type="hidden" id="RTs" name="RTs" value="">
+                <input type="hidden" id="demographics" name="demographics" value="categorylearn_pilot1">
+                <input type="hidden" id="ExpName" name="ExpName" value="categorylearn_pilot1">
+              </form>
+            </td>
+          </tr>
+        </table>
+      </html>

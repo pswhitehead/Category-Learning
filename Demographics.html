@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jslib/jquery-3.2.1.js"></script>
+<link rel="stylesheet" href="css/consent.css" type="text/css">
+<script type="text/javascript">
+$(document).ready(function(){
+	var data = [[""]];
+	$("#submitButton").click(function(){
+		data[0] = document.getElementById("gender").value;
+
+		data[1] = document.getElementById("age").value;
+		data[2] = document.getElementById("ethnicity").value;
+
+		e = document.getElementById("education");
+		data[3] = e.options[e.selectedIndex].value;
+
+		//alert(data.join(";"));
+		$("#demographics", opener.window.document).val(data.join(";"));
+		opener.updateMainMenu(2);
+		JavaScript:window.close();
+	});
+});
+</script>
+
+
+</head>
+<body>
+	<div id='info-consent-letter' style="width: 50%; margin: auto">
+	<p> <b> Please take a few minutes to answer the demographic questions below:</b></p>
+	<p> <b> What gender do you identify with?: (leave blank if you do not wish to reply)</b> </p>
+	<input id="gender" name="Gender" value=""></input>
+
+	<p><b> What is your current age?: (leave blank if you do not wish to reply)</b></p>
+	<input id="age" name="Age" value=""></input>
+
+	<p><b> What is your race and/or ethnicity?: (leave blank if you do not wish to reply)</b></p>
+	<input id="ethnicity" name="Ethnicity" value=""></input>
+
+	<p> <b> What is the highest level of schooling you have reached?: (leave blank if you do not wish to reply)</b> </p>
+	<select id="education">
+		<option value="BL"></option>
+		<option value="N">No schooling completed</option>
+		<option value="LH">Some high school, no diploma</option>
+		<option value="HS">High school graduate, diploma or equivalent (i.e. GED)</option>
+		<option value="SC">Some college, no degree</option>
+		<option value="TR">Trade, technical, or vocational training</option>
+		<option value="AD">Associates Degree</option>
+		<option value="BD">Bachelor's Degree</option>
+		<option value="MA">Master's Degree</option>
+		<option value="PD">Professional Degree (i.e. MD, JD)</option>
+		<option value="PHD">Doctorate degree (i.e. PhD)</option>
+	</select>
+	<br>
+	<button id="submitButton">Submit</button>
+</div>
+</body>
+</html>
