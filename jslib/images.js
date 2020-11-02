@@ -1,3 +1,25 @@
+var surveyquestions = [
+'Have you ever collected rocks?',
+'Have you ever taken a Geology class?',
+'If you have taken a Geology class, how long ago did you take it?',
+'If you have taken a Geology class, at what education level did you take it?',
+'Have you ever taken a class in which Geology or rock types was a unit?',
+'Have you ever worked in a job in which knowledge about rocks was important?',
+'What would you say is your previous experience level with identifying rocks?',
+'It upsets me to go into a situation without knowing what I can expect from it.',
+'I am not bothered by things that interrupt my daily routine.',
+'I enjoy having a clear and structured mode of life.',
+'I like to have a place for everything and everything in its place.',
+'I enjoy being spontaneous.',
+'I find that a well-ordered life with regular hours makes my life tedious.',
+'I don’t like situations that are uncertain.',
+'I hate to change my plans at the last minute.',
+'I hate to be with people who are unpredictable.',
+'I find that a consistent routine enables me to enjoy life more.',
+'I find the exhilaration of being in unpredictable situations.',
+'I become uncomfortable when the rules in a situation are not clear.'
+]
+
 var listimagenames = [
  'images/Night Vision Context/I_Granite/I_Granite_01_NV.png',
  'images/Night Vision Context/I_Granite/I_Granite_02_NV.png',

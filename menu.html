@@ -32,24 +32,32 @@
 		{
 		case 0:
 		$("#myButton").show();
+		$("#ID").hide();
 		$("#submit").hide();
 		$("#redo").hide();
+		$("#IDbutton").hide();
 			$("#instruction").text("Click button to read consent form. DO NOT CLOSE THIS SCREEN.");
 			break;
 		case 1:
 		$("#myButton").show();
+		$("#ID").hide();
 		$("#submit").hide();
 		$("#redo").hide();
+		$("#IDbutton").hide();
 			$("#instruction").text("Click button to fill out demographic survey. DO NOT CLOSE THIS SCREEN.");
 			break;
 		case 2:
 		$("#myButton").show();
+		$("#ID").hide();
+		$("#IDbutton").hide();
 			$("#instruction").text("Click 'Continue' button to start task. DO NOT CLOSE THIS SCREEN.");
 			break;
 		case 3:
 			$("#instruction").hide();
+			$("#ID").hide();
 			$("#myButton").hide();
 			$("#redo").hide();
+			$("#IDbutton").hide();
 			$("#mturk_form").show();
 			break;
 		}
@@ -59,25 +67,27 @@
 		$("#mturk_form").hide();
 		$("#instructions").hide();
 		$("#myButton").hide();
+		$("#IDbutton").hide();
+		$("#ID").hide();
 
-		/*document.getElementById("assignmentId").value = gup("assignmentId", document.referrer);
-		document.getElementById("workerId").value = gup("workerId", document.referrer);
-		document.getElementById("hitId").value = gup("hitId", document.referrer);
-
-		if (document.getElementById("assignmentId").value == "" || document.getElementById("assignmentId").value == "ASSIGNMENT_ID_NOT_AVAILABLE")*/
-		document.getElementById("assignmentId").value = 123456;
-		document.getElementById("workerId").value = 123456;
-		document.getElementById("hitId").value = 123456;
-
-		if (document.getElementById("assignmentId").value == "" || document.getElementById("assignmentId").value == "ASSIGNMENT_ID_NOT_AVAILABLE")
-		{
-			$("#instruction").text("Accept HIT first");
-			$("#instruction").show();
+		let getID = function(){
 			$("#myButton").hide();
 			$("#redo").hide();
+			$("#ID").show();
+			$("#instruction").text("Please submit your MTurk ID");
+
+			$("#IDbutton").show().click(function(){
+				if(document.getElementById('ID').value != ""){
+					document.getElementById("workerId").value = document.getElementById('ID').value;
+					document.getElementById("assignmentId").value = document.getElementById('ID').value;
+					document.getElementById("hitId").value = document.getElementById('ID').value;
+					$("#ID").hide();
+					runMenu();
+				}
+			});
 		}
-		else
-		{
+
+		let runMenu = function(){
 			updateMainMenu(0);
 			$("#myButton").click(function(){
 			switch(curStage)
@@ -94,6 +104,19 @@
 				}
 			});
 		}
+
+		document.getElementById("assignmentId").value = gup("assignmentId", document.referrer);
+		document.getElementById("workerId").value = gup("workerId", document.referrer);
+		document.getElementById("hitId").value = gup("hitId", document.referrer);
+
+		if (document.getElementById("workerId").value == "" || document.getElementById("workerId").value == "ASSIGNMENT_ID_NOT_AVAILABLE")
+		{
+			getID();
+		}
+		else
+		{
+			runMenu();
+		}
 	});
 
 	</script>
@@ -104,6 +127,8 @@
 					<p id="instruction" style="font-family: arial; font-size: 40px; top: 10000px; color: white;">Click the button to fill out demographics</p>
 					<button id="myButton"> Continue </button>
 					<button id="redo"> Redo </button>
+					<input id="ID" name="ID" value="" type = 'text' onfocus="this.value=''" value=""></input>
+					<button id="IDbutton"> Submit MTurk ID </button>
 						<form id="mturk_form" method="POST" action="https://dibs-web01.vm.duke.edu/AMTSubmit/dataHandler.php">
 							<!-- <form id="mturk_form" method="POST" action="https://workersandbox.mturk.com/mturk/externalSubmit"> -->
 							<!-- <form id="mturk_form" method="POST" action="https://wwww.mturk.com/mturk/externalSubmit"> -->

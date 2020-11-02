@@ -53,8 +53,21 @@ stage = []
 //instruction SCREENS
 example_instruct = [99]
 initial_instruct = [100]
-novel_instruct = [101]
-studied_instruct = [102]
+question_instruct = [101]
+novel_instruct = [102]
+studied_instruct = [103]
+survey_instruct = [104]
+
+//make the survey and question vectors
+question_num = []
+for (g = 0; g < 19; g++){
+  question_num.push(g)
+}
+
+survey_num = []
+for (g = 0; g < 4; g++){
+  survey_num.push(g)
+}
 
 //which items will we choose?
 items = [1,2,3,4,5,6,7,8,9,10,11,12]
@@ -167,10 +180,10 @@ test_image_versions.splice(1, test_length);
 test_image_context.splice(1, test_length);
 
 //concat these arrays
-images_final = images_final.concat(example_instruct.concat(example_images.concat(initial_instruct.concat(study_images.concat(novel_instruct.concat(test_images.concat(studied_instruct.concat(study_images2))))))))
-images_version_final = images_version_final.concat(example_instruct.concat(example_image_versions.concat(initial_instruct.concat(study_image_context.concat(novel_instruct.concat(test_image_context.concat(studied_instruct.concat(study_image_context2))))))))
-image_types_final = image_types_final.concat(example_instruct.concat(example_image_types.concat(initial_instruct.concat(study_image_types.concat(novel_instruct.concat(test_image_types.concat(studied_instruct.concat(study_image_types2))))))))
-image_context_final = image_context_final.concat(example_instruct.concat(example_image_context.concat(initial_instruct.concat(study_image_context.concat(novel_instruct.concat(test_image_context.concat(studied_instruct.concat(study_image_context2))))))))
+images_final = images_final.concat(example_instruct.concat(example_images.concat(initial_instruct.concat(study_images.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_images.concat(studied_instruct.concat(study_images2.concat(survey_instruct.concat(survey_num))))))))))))
+images_version_final = images_version_final.concat(example_instruct.concat(example_image_versions.concat(initial_instruct.concat(study_image_context.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_image_context.concat(studied_instruct.concat(study_image_context2.concat(survey_instruct.concat(survey_num))))))))))))
+image_types_final = image_types_final.concat(example_instruct.concat(example_image_types.concat(initial_instruct.concat(study_image_types.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_image_types.concat(studied_instruct.concat(study_image_types2.concat(survey_instruct.concat(survey_num))))))))))))
+image_context_final = image_context_final.concat(example_instruct.concat(example_image_context.concat(initial_instruct.concat(study_image_context.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_image_context.concat(studied_instruct.concat(study_image_context2.concat(survey_instruct.concat(survey_num))))))))))))
 
 //create an array for the stage
 for (g = 0; g < totallength; g++){
@@ -180,7 +193,7 @@ for (g = 0; g < totallength; g++){
   }
   //rock examples
   if (g > 0 & g < 13){
-    stage.push(42)
+    stage.push(0)
   }
   //instructions for learning phase
   if (g == 13){
@@ -188,32 +201,55 @@ for (g = 0; g < totallength; g++){
   }
   //learning phase
   if (g > 13 & g < 110){
-    stage.push(0)
+    stage.push(1)
   }
   //instructions for questionairres
   if (g == 110){
     stage.push(101)
   }
-  if (g > 110 && g < 138){
-    stage.push(00)
-  }
-  if (g == 138){
-    stage.push(102)
-  }
-  if (g > 139 && g < 208){
-    stage.push(1)
-  }
-  if (g == 138){
-    stage.push(103)
-  }
-  if (g > 139 && g < 208){
+  //the questionairre #1
+  if (g > 110 & g < 118){
     stage.push(2)
   }
-  if (g == 208){
-    stage.push(66)
+  //the questionairre #2
+  if (g > 117 & g < 130){
+    stage.push(3)
   }
-  if (g == 209){
-    stage.push(67)
+  //instructions for the test phase for rocks
+  if (g == 130){
+    stage.push(102)
+  }
+  //test phase for rocks
+  if (g > 130 & g < 179){
+    stage.push(4)
+  }
+  //instructions pre study repeat phase
+  if (g == 179){
+    stage.push(103)
+  }
+  //repeat studied examples of rocks
+  if (g > 179 & g < 228){
+    stage.push(5)
+  }
+  //questionairre study
+  if (g == 228){
+    stage.push(104)
+  }
+  //first strategy likert
+  if (g == 229){
+    stage.push(6)
+  }
+  //first strategy free resp
+  if (g == 230){
+    stage.push(7)
+  }
+  //second strategy likert
+  if (g == 231){
+    stage.push(8)
+  }
+  //second strategy free resp
+  if (g == 232){
+    stage.push(9)
   }
 }
 

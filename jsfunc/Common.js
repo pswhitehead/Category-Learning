@@ -1,6 +1,6 @@
 
 
-function wrapText(context, text, x, y, maxWidth, fontSize, fontFace){
+let wrapText = function(context, text, x, y, maxWidth, fontSize, fontFace){
   var words = text.split(' ');
   var line = '';
   var lineHeight=fontSize;
@@ -27,7 +27,7 @@ function wrapText(context, text, x, y, maxWidth, fontSize, fontFace){
 //----------------------SHUFFLE FUNCTION------------------//
 //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
-function shuffle(array) {
+let shuffle = function(array) {
   for (var i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = array[i];
@@ -38,10 +38,13 @@ function shuffle(array) {
   };
 
 //-------------------COUNTDOWN SCREENS----------------//
-function countDown(time){
+let countDown = function(time){
+  timeoutcountdown = null;
+  stimscreencount = 1;
   type = 0;
   if (time > 0)
   {
+    clearTimeout(timeoutcountdown);
     $("#startButton").hide();
     ctx.fillStyle = "white";
     ctx.font="60px Arial";
@@ -51,12 +54,12 @@ function countDown(time){
   }
   else
   {
-    runTrial();
+    timeoutcountdown = setTimeout(runTrial,250);
   }
 };
 
 //-----------------------NOT FULL SCREEN----------------//
-function nonfullscreen(){
+let nonfullscreen = function(){
   type = 2;
   ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
   ctx.font="bold 30px Arial";
@@ -77,7 +80,7 @@ function nonfullscreen(){
 };
 
 //-----------------------CHECKS SIZE SCREEN----------------//
-function checkSize(){
+let checkSize = function(){
   var w = window.innerWidth;
   var h = window.innerHeight;
   if (w < 800 || h < 600) // 800 by 600 is the lowest resolution on my laptop; seems like a good "minimum" (basically need 500 x 500 at least)

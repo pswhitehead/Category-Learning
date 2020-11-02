@@ -38,7 +38,7 @@
     ISIinterval = 500
 
     //---------------------TRIAL COUNTS--------------------//
-    totallength = 237;
+    totallength = 233;
 
     //#######################################################//
     //-------------Starting HTML and JS Funct----------------//
@@ -66,6 +66,10 @@
     $("#RockGypsum").hide();
     $("#Sandstone").hide();
     $("#Start").hide();
+    $("#Start2").hide();
+    $("#Start3").hide();
+    $("#Start4").hide();
+    $("#Start5").hide();
     $("#Example").hide();
     $("#Likert1").hide();
     $("#Likert2").hide();
@@ -76,8 +80,59 @@
     $("#Likert7").hide();
     $("#Likert8").hide();
 
+    $("#Granite2").hide();
+    $("#Obsidian2").hide();
+    $("#Pegmatite2").hide();
+    $("#Pumice2").hide();
+    $("#Amphibolite2").hide();
+    $("#Gneiss2").hide();
+    $("#Marble2").hide();
+    $("#Slate2").hide();
+    $("#Breccia2").hide();
+    $("#Conglomerate2").hide();
+    $("#RockGypsum2").hide();
+    $("#Sandstone2").hide();
+    $("#Likert12").hide();
+    $("#Likert22").hide();
+    $("#Likert32").hide();
+    $("#Likert42").hide();
+    $("#Likert52").hide();
+    $("#Likert62").hide();
+    $("#Likert72").hide();
+    $("#Likert82").hide();
+
+    $("#Granite3").hide();
+    $("#Obsidian3").hide();
+    $("#Pegmatite3").hide();
+    $("#Pumice3").hide();
+    $("#Amphibolite3").hide();
+    $("#Gneiss3").hide();
+    $("#Marble3").hide();
+    $("#Slate3").hide();
+    $("#Breccia3").hide();
+    $("#Conglomerate3").hide();
+    $("#RockGypsum3").hide();
+    $("#Sandstone3").hide();
+    $("#Likert13").hide();
+    $("#Likert23").hide();
+    $("#Likert33").hide();
+    $("#Likert43").hide();
+    $("#Likert53").hide();
+    $("#Likert63").hide();
+    $("#Likert73").hide();
+    $("#Likert83").hide();
+
+    $("#question1").hide();
+    $("#question2").hide();
+    $("#question3").hide();
+    $("#question4").hide();
+    $("#QUESTION1").hide();
+    $("#QUESTION2").hide();
+    $("#QUESTION3").hide();
+
 
     //first js function to run
+    surveyquestions = surveyquestions
     fileName = listimagenames
     img = new Array(fileName.length);
     imgCount = 0
@@ -97,6 +152,7 @@
     instructioncount = 0;
     stimscreencount = 0;
 
+
     //variables that just need to be
     type = 0;
     jokes = 0;
@@ -109,6 +165,9 @@
     d1;
     checkResponse = false;
     timeoutHandle = null;
+    timeoutIMAGE = null;
+    timeoutITI = null;
+    timeoutcountdown = null;
 
     //#######################################################//
     //-----------------------Button Presses------------------//
@@ -116,11 +175,162 @@
     //Detect events likes clicks or button presses
     $("body").keypress(function(event){
       //clearTimeout();
+      if (type != 4){
       key = event.keyCode || event.which
-      event.preventDefault();
+      event.preventDefault();}
     });
 
+    //define each css click element
+    $("#Granite").on('click', function(){if(stimscreencount == 0){ans=1;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Obsidian").on('click', function(){if(stimscreencount == 0){ans=2;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Pegmatite").on('click', function(){if(stimscreencount == 0){ans=3;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Pumice").on('click', function(){if(stimscreencount == 0){ans=4;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Amphibolite").on('click', function(){if(stimscreencount == 0){ans=5;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Gneiss").on('click', function(){if(stimscreencount == 0){ans=6;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Marble").on('click', function(){if(stimscreencount == 0){ans=7;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Slate").on('click', function(){if(stimscreencount == 0){ans=8;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Breccia").on('click', function(){if(stimscreencount == 0){ans=9;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Conglomerate").on('click', function(){if(stimscreencount == 0){ans=10;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#RockGypsum").on('click', function(){if(stimscreencount == 0){ans=11;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Sandstone").on('click', function(){if(stimscreencount == 0){ans=12;data[logCounter] = ["SR:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen()}});
+    $("#Granite2").on('click', function(){if(stimscreencount == 0){ans=1;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Obsidian2").on('click', function(){if(stimscreencount == 0){ans=2;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Pegmatite2").on('click', function(){if(stimscreencount == 0){ans=3;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Pumice2").on('click', function(){if(stimscreencount == 0){ans=4;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Amphibolite2").on('click', function(){if(stimscreencount == 0){ans=5;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Gneiss2").on('click', function(){if(stimscreencount == 0){ans=6;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Marble2").on('click', function(){if(stimscreencount == 0){ans=7;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Slate2").on('click', function(){if(stimscreencount == 0){ans=8;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Breccia2").on('click', function(){if(stimscreencount == 0){ans=9;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Conglomerate2").on('click', function(){if(stimscreencount == 0){ans=10;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#RockGypsum2").on('click', function(){if(stimscreencount == 0){ans=11;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Sandstone2").on('click', function(){if(stimscreencount == 0){ans=12;data[logCounter] = ["SR2:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Granite3").on('click', function(){if(stimscreencount == 0){ans=1;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Obsidian3").on('click', function(){if(stimscreencount == 0){ans=2;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Pegmatite3").on('click', function(){if(stimscreencount == 0){ans=3;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Pumice3").on('click', function(){if(stimscreencount == 0){ans=4;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Amphibolite3").on('click', function(){if(stimscreencount == 0){ans=5;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Gneiss3").on('click', function(){if(stimscreencount == 0){ans=6;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Marble3").on('click', function(){if(stimscreencount == 0){ans=7;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Slate3").on('click', function(){if(stimscreencount == 0){ans=8;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Breccia3").on('click', function(){if(stimscreencount == 0){ans=9;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Conglomerate3").on('click', function(){if(stimscreencount == 0){ans=10;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#RockGypsum3").on('click', function(){if(stimscreencount == 0){ans=11;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
+    $("#Sandstone3").on('click', function(){if(stimscreencount == 0){ans=12;data[logCounter] = ["SR3:", i, onset, trialmatrix[1][i], ans, 9999,
+    trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i],
+    trialmatrix[4][i]];
+    logCounter++;iti_screen_nofeedback()}});
 
+    $("#Start").on('click', function(){stimscreencount = 1; $("#Start").hide(); iti_screen_nofeedback();});
+    $("#Start2").on('click', function(){stimscreencount = 1; $("#Start2").hide(); iti_screen_nofeedback();});
+    $("#Start3").on('click', function(){stimscreencount = 1; $("#Start3").hide(); iti_screen_nofeedback();});
+    $("#Start4").on('click', function(){stimscreencount = 1; $("#Start4").hide(); iti_screen_nofeedback();});
+    $("#Start5").on('click', function(){stimscreencount = 1; $("#Start5").hide(); iti_screen_nofeedback();});
           });
 
         </script>
@@ -130,6 +340,10 @@
             <td>
               <div class="canvas-container">
                 <canvas id='myCanvas' width='900' height='900'></canvas>
+                <input id="question1" name="question1" value="" type = 'text' onfocus="this.value=''" value=""></input>
+                <input id="question2" name="question2" value="" type = 'text' onfocus="this.value=''" value=""></input>
+                <input id="question3" name="question3" value="" type = 'text' onfocus="this.value=''" value=""></input>
+                <input id="question4" name="question4" value="" type = 'text' onfocus="this.value=''" value=""></input>
                 <button id='Granite'>Granite</button>
                 <button id='Obsidian'>Obsidian</button>
                 <button id='Pegmatite'>Pegmatite</button>
@@ -142,7 +356,38 @@
                 <button id='Conglomerate'>Conglomerate</button>
                 <button id='RockGypsum'>Rock Gypsum</button>
                 <button id='Sandstone'>Sandstone</button>
+                <button id='Granite2'>Granite</button>
+                <button id='Obsidian2'>Obsidian</button>
+                <button id='Pegmatite2'>Pegmatite</button>
+                <button id='Pumice2'>Pumice</button>
+                <button id='Amphibolite2'>Amphibolite</button>
+                <button id='Gneiss2'>Gneiss</button>
+                <button id='Marble2'>Marble</button>
+                <button id='Slate2'>Slate</button>
+                <button id='Breccia2'>Breccia</button>
+                <button id='Conglomerate2'>Conglomerate</button>
+                <button id='RockGypsum2'>Rock Gypsum</button>
+                <button id='Sandstone2'>Sandstone</button>
+                <button id='Granite3'>Granite</button>
+                <button id='Obsidian3'>Obsidian</button>
+                <button id='Pegmatite3'>Pegmatite</button>
+                <button id='Pumice3'>Pumice</button>
+                <button id='Amphibolite3'>Amphibolite</button>
+                <button id='Gneiss3'>Gneiss</button>
+                <button id='Marble3'>Marble</button>
+                <button id='Slate3'>Slate</button>
+                <button id='Breccia3'>Breccia</button>
+                <button id='Conglomerate3'>Conglomerate</button>
+                <button id='RockGypsum3'>Rock Gypsum</button>
+                <button id='Sandstone3'>Sandstone</button>
                 <button id='Start'>Begin Task</button>
+                <button id='Start2'>Begin Task</button>
+                <button id='Start3'>Begin Task</button>
+                <button id='Start4'>Begin Task</button>
+                <button id='Start5'>Begin Task</button>
+                <button id='QUESTION1'>Next Question</button>
+                <button id='QUESTION2'>Next Question</button>
+                <button id='QUESTION3'>Next Question</button>
                 <button id='Example'>See Example Rocks</button>
                 <button id='Likert1'>Always Memorized</button>
                 <button id='Likert2'>Usually Memorized</button>
@@ -151,6 +396,20 @@
                 <button id='Likert5'>Sometimes Established Rule</button>
                 <button id='Likert6'>Usually Established Rule</button>
                 <button id='Likert7'>Always Established Rule</button>
+                <button id='Likert12'>Always Memorized</button>
+                <button id='Likert22'>Usually Memorized</button>
+                <button id='Likert32'>Sometimes Memorized</button>
+                <button id='Likert42'>Unsure or Equally Both Strategies</button>
+                <button id='Likert52'>Sometimes Established Rule</button>
+                <button id='Likert62'>Usually Established Rule</button>
+                <button id='Likert72'>Always Established Rule</button>
+                <button id='Likert13'>Always Memorized</button>
+                <button id='Likert23'>Usually Memorized</button>
+                <button id='Likert33'>Sometimes Memorized</button>
+                <button id='Likert43'>Unsure or Equally Both Strategies</button>
+                <button id='Likert53'>Sometimes Established Rule</button>
+                <button id='Likert63'>Usually Established Rule</button>
+                <button id='Likert73'>Always Established Rule</button>
                   </div>
               <div style="text-align:center; align:center;">
               </div>
