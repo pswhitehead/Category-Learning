@@ -120,7 +120,7 @@ test_image_types = []
 test_image_versions = []
 test_image_context = []
 for (g = 0; g < img.length; g++){
-  if (image_context[g] == test_context[0] | image_context[g] == test_context[1]){
+  if (image_context[g] == test_context[0] || image_context[g] == test_context[1]){
     if (test_items.indexOf(image_version[g]) != -1){
       test_images.push(g); test_image_types.push(image_type[g]);
       test_image_versions.push(image_version[g]); test_image_context.push(image_context[g])
