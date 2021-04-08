@@ -232,7 +232,7 @@ for (g = 0; g < 50; g++){
   checkrandomization = 1
   while(checkrandomization == 1){
     shuffle(random_vector)
-    if(study_images[random_vector[0]] != study_images_final[-1]){
+    if(study_images[random_vector[0]] != study_images_final[study_images_final.length - 1]){
       checkrandomization = 0
     }
   }

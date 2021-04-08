@@ -104,7 +104,7 @@ let runTrial_matchedlearning = function (){
       else if (checkwindowsize == 1) {nonfullscreen();}}
 
     else if (stimscreencount == 1){
-      stimscreencount = 0; j++; instructionson = 0; check_learning(miniblock_right);
+      stimscreencount = 0; j++; instructionson = 0; check_learning();
       runTrial_matchedlearning();}
         }
   else {
@@ -115,7 +115,7 @@ let runTrial_matchedlearning = function (){
 //#######################################################//
 //-------------FUNCTION TO CHECK LEARNING ACC------------//
 //#######################################################//
-let check_learning = function(miniblock_right){
+let check_learning = function(){
   if (j % 12 === 0){
     if(math.sum(miniblock_right)/12 > .4){
       exit_learning = 1; i++; trialcount++;
