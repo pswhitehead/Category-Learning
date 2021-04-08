@@ -76,7 +76,6 @@ shuffle(items)
 example_items = [items[9]]
 study_context = [0] //between subs study context
 test_context = [1,0]
-study_items = [items[0],items[1],items[7],items[8]]
 test_items = [items[3],items[4],items[5],items[6]]
 
 //make the vectors for images and information in study and test
@@ -96,54 +95,20 @@ for (g = 0; g < img.length; g++){
 }
 
 
-study_images = []
 study_images2 = []
-study_image_types = []
-study_image_versions = []
-study_image_context = []
 study_image_types2 = []
 study_image_versions2 = []
 study_image_context2 = []
 for (g = 0; g < img.length; g++){
-  if (image_context[g] == study_context[0]){
-    if (study_items.indexOf(image_version[g]) != -1){
-      study_images.push(g); study_images.push(g); study_images2.push(g);
-      study_image_types.push(image_type[g]); study_image_types.push(image_type[g]); study_image_types2.push(image_type[g]);
-      study_image_versions.push(image_version[g]); study_image_versions.push(image_version[g]); study_image_versions2.push(image_version[g]);
-      study_image_context.push(image_context[g]); study_image_context.push(image_context[g]); study_image_context2.push(image_context[g]);
-    }
-  }
-}
-
-test_images = []
-test_image_types = []
-test_image_versions = []
-test_image_context = []
-for (g = 0; g < img.length; g++){
   if (image_context[g] == test_context[0] || image_context[g] == test_context[1]){
     if (test_items.indexOf(image_version[g]) != -1){
-      test_images.push(g); test_image_types.push(image_type[g]);
-      test_image_versions.push(image_version[g]); test_image_context.push(image_context[g])
+      study_images2.push(g);
+      study_image_types2.push(image_type[g]);
+      study_image_versions2.push(image_version[g]);
+      study_image_context2.push(image_context[g]);
     }
   }
 }
-
-//shuffle these arrays for the study images
-shuffleorder = []
-for (g = 0; g < study_images.length; g++){
-  shuffleorder.push(g)
-}
-shuffle(shuffleorder)
-
-study_length = study_images.length
-for (g = 0; g < study_length; g++){
-  study_images.push(study_images[shuffleorder[g]]); study_image_types.push(study_image_types[shuffleorder[g]]);
-  study_image_versions.push(study_image_versions[shuffleorder[g]]); study_image_context.push(study_image_context[shuffleorder[g]]);
-}
-study_images.splice(0, study_length);
-study_image_versions.splice(0, study_length);
-study_image_types.splice(0, study_length);
-study_image_context.splice(0, study_length);
 
 //shuffle these arrays for the study2 images
 shuffleorder = []
@@ -162,28 +127,11 @@ study_image_versions2.splice(0, study2_length);
 study_image_types2.splice(0, study2_length);
 study_image_context2.splice(0, study2_length);
 
-//shuffle these arrays for the test images
-shuffleorder2 = []
-for (g = 0; g < test_images.length; g++){
-  shuffleorder2.push(g)
-}
-shuffle(shuffleorder2)
-
-test_length = test_images.length
-for (g = 0; g < test_length; g++){
-  test_images.push(test_images[shuffleorder2[g]]); test_image_types.push(test_image_types[shuffleorder2[g]]);
-  test_image_versions.push(test_image_versions[shuffleorder2[g]]); test_image_context.push(test_image_context[shuffleorder2[g]]);
-}
-test_images.splice(0, test_length);
-test_image_types.splice(0, test_length);
-test_image_versions.splice(0, test_length);
-test_image_context.splice(0, test_length);
-
 //concat these arrays
-images_final = images_final.concat(example_instruct.concat(example_images.concat(initial_instruct.concat(study_images.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_images.concat(studied_instruct.concat(study_images2.concat(survey_instruct.concat(survey_num))))))))))))
-images_version_final = images_version_final.concat(example_instruct.concat(example_image_versions.concat(initial_instruct.concat(study_image_context.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_image_context.concat(studied_instruct.concat(study_image_context2.concat(survey_instruct.concat(survey_num))))))))))))
-image_types_final = image_types_final.concat(example_instruct.concat(example_image_types.concat(initial_instruct.concat(study_image_types.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_image_types.concat(studied_instruct.concat(study_image_types2.concat(survey_instruct.concat(survey_num))))))))))))
-image_context_final = image_context_final.concat(example_instruct.concat(example_image_context.concat(initial_instruct.concat(study_image_context.concat(question_instruct.concat(question_num.concat(novel_instruct.concat(test_image_context.concat(studied_instruct.concat(study_image_context2.concat(survey_instruct.concat(survey_num))))))))))))
+images_final = images_final.concat(example_instruct.concat(example_images.concat(initial_instruct.concat(question_instruct.concat(question_num.concat(studied_instruct.concat(study_images2.concat(survey_instruct.concat(survey_num)))))))))
+images_version_final = images_version_final.concat(example_instruct.concat(example_image_versions.concat(initial_instruct.concat(question_instruct.concat(question_num.concat(studied_instruct.concat(study_image_versions2.concat(survey_instruct.concat(survey_num)))))))))
+image_types_final = image_types_final.concat(example_instruct.concat(example_image_types.concat(initial_instruct.concat(question_instruct.concat(question_num.concat(studied_instruct.concat(study_image_types2.concat(survey_instruct.concat(survey_num)))))))))
+image_context_final = image_context_final.concat(example_instruct.concat(example_image_context.concat(initial_instruct.concat(question_instruct.concat(question_num.concat(studied_instruct.concat(study_image_context2.concat(survey_instruct.concat(survey_num)))))))))
 
 //create an array for the stage
 for (g = 0; g < totallength; g++){
@@ -199,62 +147,105 @@ for (g = 0; g < totallength; g++){
   if (g == 13){
     stage.push(100)
   }
-  //learning phase
-  if (g > 13 & g < 110){
-    stage.push(1)
-  }
   //instructions for questionairres
-  if (g == 110){
+  if (g == 14){
     stage.push(101)
   }
   //the questionairre #1
-  if (g > 110 & g < 118){
+  if (g > 14 & g < 22){
     stage.push(2)
   }
   //the questionairre #2
-  if (g > 117 & g < 130){
+  if (g > 21 & g < 34){
     stage.push(3)
   }
-  //instructions for the test phase for rocks
-  if (g == 130){
+  //instructions pre study repeat phase
+  if (g == 34){
     stage.push(102)
   }
-  //test phase for rocks
-  if (g > 130 & g < 227){
+  //repeat studied examples of rocks
+  if (g > 34 & g < 131){
     stage.push(4)
   }
-  //instructions pre study repeat phase
-  if (g == 227){
-    stage.push(103)
-  }
-  //repeat studied examples of rocks
-  if (g > 227 & g < 276){
-    stage.push(5)
-  }
   //questionairre study
-  if (g == 276){
+  if (g == 131){
     stage.push(104)
   }
   //first strategy likert
-  if (g == 277){
+  if (g == 132){
     stage.push(6)
   }
   //first strategy free resp
-  if (g == 278){
+  if (g == 133){
     stage.push(7)
   }
   //second strategy likert
-  if (g == 279){
+  if (g == 134){
     stage.push(8)
   }
   //second strategy free resp
-  if (g == 280){
+  if (g == 135){
     stage.push(9)
   }
 }
 
 //slip em in to a trial MATRIX
 trialmatrix = [stage, images_final,images_version_final,image_types_final,image_context_final]
+
+
+//#######################################################//
+//--------------------MAKE THE #2 MATRIX-----------------//
+//#######################################################//
+
+study_items = [items[0],items[1],items[7],items[8],
+              items[10],items[11],items[2]]
+
+
+study_images = []
+study_image_types = []
+study_image_versions = []
+study_image_context = []
+
+for (k = 1; k < 13; k++){
+  shuffle(study_items)
+  for (g = 0; g < img.length; g++){
+    if(image_type[g] == k){
+      if (image_context[g] == study_context[0]){
+        if (image_version[g] == study_items[0]){
+          study_images.push(g);
+          study_image_types.push(image_type[g]);
+          study_image_versions.push(image_version[g]);
+          study_image_context.push(image_context[g]);
+        }
+      }
+    }
+  }
+}
+
+study_images_final = []
+study_image_types_final = []
+study_image_versions_final = []
+study_image_context_final = []
+random_vector = [0,1,2,3,4,5,6,7,8,9,10,11]
+
+for (g = 0; g < 50; g++){
+  checkrandomization = 1
+  while(checkrandomization == 1){
+    shuffle(random_vector)
+    if(study_images[random_vector[0]] != study_images_final[-1]){
+      checkrandomization = 0
+    }
+  }
+  for (k = 0; k < 12; k++){
+    study_images_final.push(study_images[random_vector[k]])
+    study_image_types_final.push(study_image_types[random_vector[k]])
+    study_image_versions_final.push(study_image_versions[random_vector[k]])
+    study_image_context_final.push(study_image_context[random_vector[k]])
+  }
+}
+
+
+trialmatrix_2 = [study_images_final,study_image_versions_final,study_image_types_final,study_image_context_final]
 
 //now let's run the trial/task
 runTrial();}
