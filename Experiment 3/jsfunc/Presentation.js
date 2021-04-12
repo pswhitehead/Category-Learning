@@ -544,7 +544,7 @@ let learn_picture = function (object, interval){
   //record presentation data
   data[logCounter] = ["SP:", j, onset, object, 9999, 9999,
   1,trialmatrix_2[0][j],trialmatrix_2[1][j],trialmatrix_2[2][j],
-  trialmatrix[3][j],9999, 9999];
+  trialmatrix_2[3][j],9999, 9999];
   logCounter++;
 
   //draw image
@@ -618,7 +618,7 @@ let test_novel_picture = function (object, interval){
 
   //record presentation data
   data[logCounter] = ["SP:", i, onset, object, 9999, 9999,
-  1, trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i], 9999, 9999];
+  trialmatrix[0][i],trialmatrix[1][i],trialmatrix[2][i],trialmatrix[3][i], trialmatrix[4][i],9999, 9999];
   logCounter++;
 
   //draw image

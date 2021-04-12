@@ -6,7 +6,7 @@ let runTrial = function (){
   clearTimeout(timeoutITI);
   d2 = new Date();
   time_in_task = d2.getTime() - runStart;
-  if (trialcount < totallength & time_in_task < 2700000){
+  if (trialcount < totallength & exit_task != 1){
 
     //Present the the object pictures and instructions per block
     if (stimscreencount == 0){checkSize();
@@ -93,7 +93,8 @@ let runTrial_matchedlearning = function (){
   timeoutITI = null;
   clearTimeout(timeoutITI);
   d2 = new Date();
-  time_in_task = d2.getTime() - runStart;
+  if (j == -1){start_time = d2.getTime() - runStart;}
+  time_in_task = d2.getTime() - start_time - runStart;
   if (exit_learning == 0 & time_in_task < 2700000){
     //Present the the object pictures and instructions per block
     if (stimscreencount == 0){checkSize();
@@ -108,7 +109,12 @@ let runTrial_matchedlearning = function (){
       runTrial_matchedlearning();}
         }
   else {
-    runTrial();
+    if (time_in_task < 2700000){
+      runTrial();
+    }
+    else {
+      exit_task = 1;  runTrial();
+    }
   }
 };
 
