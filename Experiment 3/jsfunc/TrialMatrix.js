@@ -74,7 +74,7 @@ items = [1,2,3,4,5,6,7,8,9,10,11,12]
 shuffle(items)
 
 example_items = [items[9]]
-study_context = [1] //between subs study context
+study_context = [0] //between subs study context
 test_context = [1,0]
 test_items = [items[3],items[4],items[5],items[6]]
 
